@@ -31,6 +31,23 @@ public struct BSLogger {
             printToConsole(level: .error, message: error, file: file, function: function, line: line)
         }
     }
+    
+    public static func timeCheck(key: String = "", task: DispatchQueue = .global(), block: @escaping () -> Void) {
+        task.async {
+            let speedCheker = BSTimeCheker(key: key)
+            block()
+            speedCheker.finish()
+        }
+    }
+    
+    @available(iOS 13.0, macOS 13.0, tvOS 13.0, watchOS 13.0, *)
+    public static func timeCheck(key: String = "", block: @escaping () async -> Void) {
+        Task {
+            let speedCheker = BSTimeCheker(key: key)
+            await block()
+            speedCheker.finish()
+        }
+    }
 }
 
 extension BSLogger {
