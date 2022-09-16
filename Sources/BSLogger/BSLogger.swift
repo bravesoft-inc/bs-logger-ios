@@ -7,6 +7,19 @@ public struct BSLogger {
         case warn
         case error
     }
+    
+    public enum Environment: String {
+        case develop
+        case staging
+        case production
+    }
+    
+    public static var shared = BSLogger()
+    public static var environment: Environment = .develop
+    
+    public func startRun(environment: Environment) {
+        BSLogger.environment = environment
+    }
 
     public static func debug(_ messages: Any..., file: String = #file, function: String = #function, line: Int = #line) {
         for message in messages {
@@ -60,8 +73,8 @@ extension BSLogger {
     }
 
     private static func printToConsole(level: LogLevel, message: Any, file: String, function: String, line: Int) {
-        #if !RELEASE
-        print(" [\(level.rawValue.uppercased())] \(getClassName(from: file)).\(function) #\(line): \(message)")
-        #endif
+        if environment == .develop {
+            print(" [\(level.rawValue.uppercased())] \(getClassName(from: file)).\(function) #\(line): \(message)")
+        }
     }
 }
