@@ -72,7 +72,7 @@ extension BSLogger {
         return fileName.components(separatedBy: ".").first ?? ""
     }
 
-    private static func printToConsole(level: LogLevel, message: Any, file: String, function: String, line: Int) {
+    static func printToConsole(level: LogLevel, message: Any, file: String, function: String, line: Int) {
         if environment == .develop {
             print(" [\(level.rawValue.uppercased())] \(getClassName(from: file)).\(function) #\(line): \(message)")
         }
