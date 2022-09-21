@@ -7,80 +7,80 @@
 
 import Foundation
 
-extension Error {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Error {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: "Error: \(self.localizedDescription)", file: file, function: function, line: line)
     }
 }
 
-extension Date {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Date {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension String {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension String {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self, file: file, function: function, line: line)
     }
 }
 
-extension Int {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Int {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension Int64 {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Int64 {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension UInt {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension UInt {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension Double {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Double {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension Float {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Float {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension Bool {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Bool {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension NSDictionary {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension NSDictionary {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension Dictionary {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Dictionary {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension NSArray {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension NSArray {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension Array {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension Array {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
@@ -89,38 +89,38 @@ extension Array {
 
 import UIKit
 
-extension CGFloat {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension CGFloat {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: self.description, file: file, function: function, line: line)
     }
 }
 
-extension CGPoint {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension CGPoint {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: "point: \(NSCoder.string(for: self))", file: file, function: function, line: line)
     }
 }
 
-extension CGSize {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension CGSize {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: "size: \(NSCoder.string(for: self))", file: file, function: function, line: line)
     }
 }
 
-extension CGRect {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension CGRect {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: "origin: \(NSCoder.string(for: self.origin)) size: \(NSCoder.string(for: self.size))", file: file, function: function, line: line)
     }
 }
 
-extension CGAffineTransform {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension CGAffineTransform {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: "a: \(self.a) b: \(self.b) c: \(self.c) d: \(self.d) tx: \(self.tx) ty: \(self.ty)", file: file, function: function, line: line)
     }
 }
 
-extension UIEdgeInsets {
-    public func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
+public extension UIEdgeInsets {
+    func log(level: BSLogger.LogLevel = .debug, file: String = #file, function: String = #function, line: Int = #line) {
         BSLogger.printToConsole(level: level, message: "edgeInsets: \(NSCoder.string(for: self))", file: file, function: function, line: line)
     }
 }
