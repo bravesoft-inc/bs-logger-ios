@@ -8,8 +8,10 @@
 import Foundation
 
 public final class BSTimeCheker {
-    private var startTime: Date
-    private let key: String
+    private(set) var startTime: Date
+    private(set) var finishedTime: Date?
+    private(set) var elapsedSeconds: Double?
+    let key: String
     
     public init(key: String = "") {
         self.startTime = .init()
@@ -18,11 +20,19 @@ public final class BSTimeCheker {
     
     public func finish() {
         let elapsed = Date().timeIntervalSince(startTime)
+        finishedTime = Date()
+        elapsedSeconds = elapsed
         
         if !key.isEmpty {
             BSLogger.info("Elapsed time(\(key)): \(elapsed)(s)")
         } else {
             BSLogger.info("Elapsed time: \(elapsed)(s)")
         }
+    }
+    
+    public func restart() {
+        startTime = .init()
+        finishedTime = nil
+        elapsedSeconds = nil
     }
 }
