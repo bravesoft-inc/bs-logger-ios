@@ -22,12 +22,12 @@ public struct BSLogger {
         BSLogger.environment = environment
     }
 
-    open class DeinitLogger {
-        deinit {
-            let className = BSLogger.getClassName(from: #file)
-            print("\(className) deinit")
-        }
-    }
+//    open class DeinitLogger {
+//        deinit {
+//            let className = BSLogger.getClassName(from: #file)
+//            print("\(className) deinit")
+//        }
+//    }
     
     public static func debug(_ messages: Any..., file: String = #file, function: String = #function, line: Int = #line) {
         for message in messages {
