@@ -14,6 +14,7 @@ public struct BSLogger {
         case production
     }
     
+    
     public static var shared = BSLogger()
     public static var environment: Environment = .develop
     
@@ -21,6 +22,13 @@ public struct BSLogger {
         BSLogger.environment = environment
     }
 
+    public class DeinitLogger {
+        deinit {
+            let className = BSLogger.getClassName(from: #file)
+            print("\(className) deinit")
+        }
+    }
+    
     public static func debug(_ messages: Any..., file: String = #file, function: String = #function, line: Int = #line) {
         for message in messages {
             printToConsole(level: .debug, message: message, file: file, function: function, line: line)
