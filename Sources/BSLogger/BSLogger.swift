@@ -22,7 +22,7 @@ public struct BSLogger {
         BSLogger.environment = environment
     }
 
-    public class DeinitLogger {
+    open class DeinitLogger {
         deinit {
             let className = BSLogger.getClassName(from: #file)
             print("\(className) deinit")
