@@ -6,6 +6,9 @@
 //
 
 open class BSDeinitLogger {
+    public init() {
+    }
+    
     deinit {
         if BSLogger.environment == .develop {
             let className = BSLogger.getClassName(from: #file)
