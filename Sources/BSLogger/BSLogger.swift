@@ -14,20 +14,12 @@ public struct BSLogger {
         case production
     }
     
-    
     public static var shared = BSLogger()
     public static var environment: Environment = .develop
     
     public func startRun(environment: Environment) {
         BSLogger.environment = environment
     }
-
-//    open class DeinitLogger {
-//        deinit {
-//            let className = BSLogger.getClassName(from: #file)
-//            print("\(className) deinit")
-//        }
-//    }
     
     public static func debug(_ messages: Any..., file: String = #file, function: String = #function, line: Int = #line) {
         for message in messages {
