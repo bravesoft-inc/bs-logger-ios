@@ -11,7 +11,6 @@ open class BSDeinitLogger {
     
     deinit {
         if BSLogger.environment == .develop {
-            let className = BSLogger.getClassName(from: #file)
             print("deinit")
         }
     }
