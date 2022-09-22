@@ -64,7 +64,7 @@ public struct BSLogger {
 }
 
 extension BSLogger {
-    private static func getClassName(from filePath: String) -> String {
+    internal static func getClassName(from filePath: String) -> String {
         guard let fileName = filePath.components(separatedBy: "/").last else {
             return ""
         }
