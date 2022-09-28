@@ -61,16 +61,6 @@ public struct BSLogger {
             speedCheker.finish()
         }
     }
-    
-    func hoge() {
-        if #available(iOS 13.0, *) {
-            BSLogger.timeCheck {
-                try? await Task.sleep(nanoseconds: 600000)
-            }
-        } else {
-            // Fallback on earlier versions
-        }
-    }
 }
 
 extension BSLogger {
