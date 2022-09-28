@@ -112,16 +112,24 @@ Host gitlab.com.hobby
 
 ### ログ出力
 ログレベルに応じてメソッドを切り替えて使用してください。
-
 ```swift
 import BSLogger
 
 actor MainViewModel: ObservableObject {
     func onTapButton() {
         BSLogger.debug("Button was tapped.")
+        BSLogger.debug("Hello, world.", 1)
     }
 }
 ```
+出力結果
+```console
+[DEBUG] MainViewModel.onTapButton() #5: Button was tapped.
+[DEBUG] MainViewModel.onTapButton() #6: Hello, world
+[DEBUG] MainViewModel.onTapButton() #6: 1
+```
+
+---
 
 また、変数を直接ログ出力することも可能です。
 ```swift
@@ -134,6 +142,10 @@ actor MainViewModel: ObservableObject {
         text.log(level: .warn)
     }
 }
+```
+出力結果
+```console
+[WARN] MainViewModel.onTapButton() #7: Button was tapped.
 ```
 
 #### ログ出力一覧
