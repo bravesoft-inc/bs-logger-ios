@@ -157,6 +157,8 @@ BSLogger.timeCheck(key: "Time") {
 
 また最低OSが13(watchOSは6)のプロジェクトでは`async/await`をサポートしたメソッドが利用可能です。
 ```swift
+import BSLogger
+
 BSLogger.timeCheck(key: "AsyncTime", task: .main) {
     try? await Task.sleep(nanoseconds: 500000)
 }
