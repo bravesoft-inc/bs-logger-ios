@@ -18,6 +18,7 @@
 #### インストール
 ##### Xcodeからインストール
 導入したいProjectを選択し、`Package Dependencies`タブの左下にある`+`ボタンを押下します。
+
 ![インストール画像1](./Docs/images/install_1.png)
 
 ---
@@ -37,6 +38,7 @@ https://gitlab.com/bs-libraries/bs_logger
 ---
 
 `BSLogger`を選択したままの状態で`Add Package`ボタンを押下してライブラリをインストールします。
+
 ![インストール画像4](./Docs/images/install_4.png)
 
 
@@ -70,11 +72,13 @@ Host gitlab.com.hobby
 [GitLab](https://gitlab.com/)にログインしてください。
 
 次に、右上の自身のアイコンから`Edit profile`をクリックして、`UserSettings`ページへ遷移してください。
+
 ![GitLabアクセストークンの発行画像1](./Docs/images/private_setting_1.png)
 
 ---
 
 サイドメニューから`Access Tokens`をクリックして`Personal Access Tokens`ページへ遷移してください。
+
 ![GitLabアクセストークンの発行画像2](./Docs/images/private_setting_2.png)
 
 ---
@@ -86,6 +90,7 @@ Host gitlab.com.hobby
 ---
 
 トークンが発行されたら画面上に`Your new personal access token`という枠でトークンが表示されるので、クリップボードにコピーしておきましょう。(※トークンは一度しか表示されませんのでご注意ください)
+
 ![GitLabアクセストークンの発行画像4](./Docs/images/private_setting_4.png)
 
 
