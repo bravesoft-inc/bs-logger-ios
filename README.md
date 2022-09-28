@@ -14,7 +14,7 @@
 ### Swift Package Manager
 #### 要件
 - Xcode 14.0.0以降が必要です。
-- サポートしているプラットフォームのバージョンは、[Package.swift](./Package.swift)を参照してください。
+- サポートしているプラットフォームとバージョンは、[Package.swift](./Package.swift)を参照してください。
 #### インストール
 ##### Xcodeからインストール
 導入したいProjectを選択し、`Package Dependencies`タブの左下にある`+`ボタンを押下します。
@@ -144,6 +144,29 @@ actor MainViewModel: ObservableObject {
 |warn|`BSLogger.warn(Any)`|`hoge.log(level: .warn)`|
 |error|`BSLogger.error(Any)`|`hoge.log(level: .error)`|
 
+#### 変数ログ出力でサポートされている型一覧
+##### プリミティブ型
+- String
+- Int
+- Double
+- Float
+- Bool
+- Dictionary
+- Array
+- Date
+- Error
+- Int64
+- UInt
+- NSDictionary
+- NSArray
+##### UIKit
+- CGFloat
+- CGPoint
+- CGSize
+- CGRect
+- CGAffineTransform
+- UIEdgeInsets
+
 ### 実行速度計測
 処理の実行速度を計測したい時に簡単に使えるメソッドを用意しています。
 
@@ -155,7 +178,7 @@ BSLogger.timeCheck(key: "Time") {
 }
 ```
 
-また最低OSが13(watchOSは6)のプロジェクトでは`async/await`をサポートしたメソッドが利用可能です。
+また最低OSにiOS13以上が指定されているプロジェクトでは`async/await`をサポートしたメソッドが利用可能です。
 ```swift
 import BSLogger
 
