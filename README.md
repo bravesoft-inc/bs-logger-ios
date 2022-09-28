@@ -112,6 +112,15 @@ Host gitlab.com.hobby
 
 ### ログ出力
 ログレベルに応じてメソッドを切り替えて使用してください。
+#### ログ出力一覧
+|レベル|通常ログ出力|変数ログ出力|
+|----|----|----|
+|debug|`BSLogger.debug(Any)`|`hoge.log(level: .debug)`|
+|info|`BSLogger.info(Any)`|`hoge.log(level: .info)`|
+|warn|`BSLogger.warn(Any)`|`hoge.log(level: .warn)`|
+|error|`BSLogger.error(Any)`|`hoge.log(level: .error)`|
+
+#### ログ出力サンプル
 ```swift
 import BSLogger
 
@@ -147,14 +156,6 @@ actor MainViewModel: ObservableObject {
 ```console
 [WARN] MainViewModel.onTapButton() #7: Button was tapped.
 ```
-
-#### ログ出力一覧
-|レベル|通常ログ出力|変数ログ出力|
-|----|----|----|
-|debug|`BSLogger.debug(Any)`|`hoge.log(level: .debug)`|
-|info|`BSLogger.info(Any)`|`hoge.log(level: .info)`|
-|warn|`BSLogger.warn(Any)`|`hoge.log(level: .warn)`|
-|error|`BSLogger.error(Any)`|`hoge.log(level: .error)`|
 
 #### 変数ログ出力でサポートされている型一覧
 ##### プリミティブ型
@@ -202,5 +203,7 @@ BSLogger.timeCheck(key: "AsyncTime", task: .main) {
 ### Deinitログ出力
 太郎記載。
 
+## デモアプリ
+[デモアプリ](./Demo)
 ## ライセンス
 ※ 社外公開する時に記載。
