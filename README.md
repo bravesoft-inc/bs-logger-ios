@@ -41,6 +41,8 @@ https://gitlab.com/bs-libraries/bs_logger
 
 
 ### <a name="private-setting"></a>プライベートリポジトリの設定
+※社外公開する時に削除。
+
 プライベートリポジトリのライブラリをプロジェクトに導入する場合は、以下の設定を順に行なってください。
 
 #### 1. SSH/Configファイルの設定
@@ -100,6 +102,63 @@ Host gitlab.com.hobby
 
 表示されたフォームにGitLabアカウント名と2で生成したGitLabのアクセストークンを設定して、プライベートリポジトリへのアクセスは完了となります。
 ## 使い方
+### 初期化
+永井くん記載。
+
+### ログ出力
+ログレベルに応じてメソッドを切り替えて使用してください。
+
+```swift
+import BSLogger
+
+actor MainViewModel: ObservableObject {
+    func onTapButton() {
+        BSLogger.debug("Button was tapped.")
+    }
+}
+```
+
+また、変数を直接ログ出力することも可能です。
+```swift
+import BSLogger
+
+actor MainViewModel: ObservableObject {
+    func onTapButton() {
+        let text = "Button was tapped."
+
+        text.log(level: .warn)
+    }
+}
+```
+
+#### ログ出力一覧
+|レベル|通常ログ出力|変数ログ出力|
+|----|----|----|
+|debug|`BSLogger.debug(Any)`|`hoge.log(level: .debug)`|
+|info|`BSLogger.info(Any)`|`hoge.log(level: .info)`|
+|warn|`BSLogger.warn(Any)`|`hoge.log(level: .warn)`|
+|error|`BSLogger.error(Any)`|`hoge.log(level: .error)`|
+
+### 実行速度計測
+処理の実行速度を計測したい時に簡単に使えるメソッドを用意しています。
+
+```swift
+import BSLogger
+
+BSLogger.timeCheck(key: "Time") {
+    Thread.sleep(forTimeInterval: 5.0)
+}
+```
+
+また最低OSが13(watchOSは6)のプロジェクトでは`async/await`をサポートしたメソッドが利用可能です。
+```swift
+BSLogger.timeCheck(key: "AsyncTime", task: .main) {
+    try? await Task.sleep(nanoseconds: 500000)
+}
+```
+
+### Deinitログ出力
+太郎記載。
 
 ## ライセンス
 ※ 社外公開する時に記載。
