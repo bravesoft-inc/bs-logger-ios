@@ -42,27 +42,27 @@ struct ContentView: View {
         
     }
     
-    //debug
+    //MARK: - debug
     var LoggerDebugButton: some View {
         LoggerButton(title: "DEBUG", image: "doc.text.below.ecg", action: { viewModel.LoggerDebug() })
     }
     
-    //info
+    //MARK: - info
     var LoggerInfoButton: some View {
         LoggerButton(title: "INFO", image: "info.circle", action: { viewModel.LoggerInfo() })
     }
     
-    //warn
+    //MARK: - warn
     var LoggerWarnButton: some View {
         LoggerButton(title: "WARN", image: "exclamationmark.triangle", action: { viewModel.LoggerWarn() })
     }
     
-    //error
+    //MARK: - error
     var LoggerErrorButton: some View {
         LoggerButton(title: "ERROR", image: "xmark.octagon", action: { viewModel.LoggerError() })
     }
     
-    //timeCheker
+    //MARK: - timeCheker
     var LoggerTimeCheker: some View {
         LoggerButton(title: "TIMECHEKER", image: "timer", action: { viewModel.LoggerTimeCheker() })
     }

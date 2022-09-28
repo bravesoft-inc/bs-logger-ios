@@ -8,14 +8,6 @@
 import Foundation
 import SwiftUI
 
-enum DebugType {
-    case debug
-    case info
-    case warn
-    case error
-    case timeCheker
-}
-
 struct LoggerButton: View {
     var title: String
     var image: String
