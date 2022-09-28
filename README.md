@@ -1,10 +1,12 @@
+[日本語のREADMEはこちら](./README-ja.md)
+# BSLogger
 <img src="https://img.shields.io/badge/SPM-v0.1.0-blue.svg?logo=swift" />
 <img src="https://img.shields.io/badge/platform-iOS-lightgrey.svg" />
 <br><br>
 
-[日本語のREADMEはこちら](./README-ja.md)
+[TOC]
 
-# BSLogger
+## 概要
 [bravesoft](https://www.bravesoft.co.jp/)が提供するシンプルにLog出力が可能なライブラリです。
 
 ## インストール方法
@@ -121,6 +123,7 @@ Host gitlab.com.hobby
 |error|`BSLogger.error(Any)`|`hoge.log(level: .error)`|
 
 #### ログ出力サンプル
+通常のログ出力のサンプルです。
 ```swift
 import BSLogger
 
@@ -131,7 +134,7 @@ actor MainViewModel: ObservableObject {
     }
 }
 ```
-出力結果
+出力結果 >
 ```console
 [DEBUG] MainViewModel.onTapButton() #5: Button was tapped.
 [DEBUG] MainViewModel.onTapButton() #6: Hello, world
@@ -140,7 +143,7 @@ actor MainViewModel: ObservableObject {
 
 ---
 
-また、変数を直接ログ出力することも可能です。
+変数を直接ログ出力する場合のサンプルです。
 ```swift
 import BSLogger
 
@@ -152,7 +155,7 @@ actor MainViewModel: ObservableObject {
     }
 }
 ```
-出力結果
+出力結果 >
 ```console
 [WARN] MainViewModel.onTapButton() #7: Button was tapped.
 ```
