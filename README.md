@@ -110,7 +110,25 @@ Host gitlab.com.hobby
 表示されたフォームにGitLabアカウント名と2で生成したGitLabのアクセストークンを設定して、プライベートリポジトリへのアクセスは完了となります。
 ## 使い方
 ### 初期化
-永井くん記載。
+アプリ起動時処理に以下を追加してください。
+「DEBUG・STAGING・RELESE」などのSchemeはプロジェクトで設定したスキーム名で記述してください。
+```swift
+class AppDelegate : UIResponder, UIApplicationDelegate {
+    func application(_application: UIApplication, 
+    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
+        
+        #if DEBUG
+          BSLogger.shared.startRun(environment: .develop)
+        #elseif STAGING
+          BSLogger.shared.startRun(environment: .staging)
+        #else //RELEASE
+          BSLogger.shared.startRun(environment: .production)
+        #endif
+        
+        return true
+    }
+}
+```
 
 ### ログ出力
 ログレベルに応じてメソッドを切り替えて使用してください。
