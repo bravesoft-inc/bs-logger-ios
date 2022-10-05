@@ -1,4 +1,3 @@
-[日本語のREADMEはこちら](./README-ja.md)
 # BSLogger
 <img src="https://img.shields.io/badge/SPM-v0.1.0-blue.svg?logo=swift" />
 <img src="https://img.shields.io/badge/platform-iOS-lightgrey.svg" />
@@ -222,7 +221,7 @@ BSLogger.timeCheck(key: "AsyncTime", task: .main) {
 ```
 
 ### Deinitログ出力
-太郎は終わったら松本さんに翻訳依頼をかける。
+太郎記載。
 
 ## デモアプリ
 [デモアプリ](./Demo)
