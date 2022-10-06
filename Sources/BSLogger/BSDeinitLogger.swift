@@ -10,9 +10,14 @@ open class BSDeinitLogger {
     }
     
     deinit {
-//        if BSLogger.environment == .develop {
-//            print("deinit")
-//        }
-        BSLogger.debug("deinit")
+        print("\(BSLogger.getClassName(from: #file)) deinit")
     }
+    
+//    private func getClassName(from filePath: String) -> String {
+//        guard let fileName = filePath.components(separatedBy: "/").last else {
+//            return ""
+//        }
+//
+//        return fileName.components(separatedBy: ".").first ?? ""
+//    }
 }
