@@ -2,10 +2,8 @@ import XCTest
 @testable import BSLogger
 
 final class BSLoggerTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-//        XCTAssertEqual(BSLogger().text, "Hello, World!")
+    func testGetClassName() {
+        let className = BSLogger.getClassName(from: #file)
+        XCTAssertEqual(className, String(describing: Self.self))
     }
 }
