@@ -10,14 +10,6 @@ open class BSDeinitLogger {
     }
     
     deinit {
-        print("\(BSLogger.getClassName(from: #file)) deinit")
+        print("\(String(describing: Self.self)) deinit")
     }
-    
-//    private func getClassName(from filePath: String) -> String {
-//        guard let fileName = filePath.components(separatedBy: "/").last else {
-//            return ""
-//        }
-//
-//        return fileName.components(separatedBy: ".").first ?? ""
-//    }
 }
