@@ -10,8 +10,9 @@ open class BSDeinitLogger {
     }
     
     deinit {
-        if BSLogger.environment == .develop {
-            print("deinit")
-        }
+//        if BSLogger.environment == .develop {
+//            print("deinit")
+//        }
+        BSLogger.debug("deinit")
     }
 }
