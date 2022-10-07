@@ -222,7 +222,22 @@ BSLogger.timeCheck(key: "AsyncTime", task: .main) {
 ```
 
 ### Deinitログ出力
-太郎は終わったら松本さんに翻訳依頼をかける。
+オブジェクト破棄時の自動ログ出力が可能です。
+ログ出力を有効化するためには`BSDeinitLogger`を継承してください。
+
+```swift
+class Hoge: BSDeinitLogger {
+}
+
+var hoge: Hoge?
+hoge = .init()
+hoge = nil
+```
+
+出力結果 >
+```console
+[DEINIT] Hoge deinit
+```
 
 ## デモアプリ
 [デモアプリ](./Demo)
