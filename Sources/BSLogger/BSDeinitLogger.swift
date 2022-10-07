@@ -10,6 +10,6 @@ open class BSDeinitLogger {
     }
     
     deinit {
-        print("\(String(describing: Self.self)) deinit")
+        print("[DEINIT] \(String(describing: Self.self)) deinit")
     }
 }
