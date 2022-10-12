@@ -45,8 +45,8 @@ public struct BSLogger {
         }
     }
     
-    public static func `deinit`() {
-        print("[DEINIT] \(String(describing: Self.self)) deinit")
+    public static func `deinit`(className: String = #file) {
+        print("[DEINIT] \(className) deinit")
     }
 
     public static func timeCheck(key: String = "", task: DispatchQueue = .global(), block: @escaping () -> Void) {
