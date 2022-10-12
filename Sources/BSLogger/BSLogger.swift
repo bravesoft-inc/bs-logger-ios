@@ -44,6 +44,10 @@ public struct BSLogger {
             printToConsole(level: .error, message: error, file: file, function: function, line: line)
         }
     }
+    
+    public static func `deinit`() {
+        print("[DEINIT] \(String(describing: Self.self)) deinit")
+    }
 
     public static func timeCheck(key: String = "", task: DispatchQueue = .global(), block: @escaping () -> Void) {
         task.async {
