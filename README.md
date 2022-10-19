@@ -6,51 +6,51 @@
 
 [TOC]
 
-## 概要
-[bravesoft](https://www.bravesoft.co.jp/)が提供するシンプルにLog出力が可能なライブラリです。
+## Overview
+This is a library which is provided by [bravesoft](https://www.bravesoft.co.jp/) to output log simply.
 
-## インストール方法
-このライブラリはSwift Package Manager(以下、SPMとする)を使って導入することが可能です。  
-ただし、このライブラリはbravesoftグループでのみ展開をおこなっているためプライベートリポジトリになっています。SPMでの導入後、[以下の設定](#private-setting)を行なってください。
+## Installation
+This library is able to adapt into the project by using Swift Package Manager(SPM).
+However, this library is a private repository due to only share to bravesoft group companies. SO, after adapting by SPM, apply [this settings](#private-setting).
 
 ### Swift Package Manager
-#### 要件
-- Xcode 14.0.0以降が必要です。
-- サポートしているプラットフォームとバージョンは、[Package.swift](./Package.swift)を参照してください。
-#### インストール
-##### Xcodeからインストール
-導入したいProjectを選択し、`Package Dependencies`タブの左下にある`+`ボタンを押下します。
+#### Requirements
+-  Xcode 14.0.0 or later versions
+- Check [Package.swift](./Package.swift) for letting you know the supported versions and platforms.
+#### Install
+##### Install From Xcode
+Choose the prpject that you want to adapt bs_logger and click `+` button at lower left of `Package Dependencies` tab.
 
-![インストール画像1](./Docs/images/install_1.png)
+![Installtion Image1](./Docs/images/install_1.png)
 
 ---
 
-右上の検索窓にリポジトリのURLを入力して、`bs_logger`を検索します。
+Put repository URL at search window of upper right and search `bs_logger`
 ```console
 https://gitlab.com/bs-libraries/bs_logger
 ```
-![インストール画像2](./Docs/images/install_2.png)
+![Installaton Image2](./Docs/images/install_2.png)
 
 ---
 
-次に`Dependecy Rule`に`Up to Next Manager Version`、最低バージョンに`1.0.0`を指定して、ダイアログ右下の`Add Package`ボタンを押下します。
+Next Specify `Up to Next Manager Version` and `1.0.0` for lowest verion to `Dependecy Rule` and click `Add Package` button at lower right of dialog.
 
-![インストール画像3](./Docs/images/install_3.png)
+![Installation Image3](./Docs/images/install_3.png)
 
 ---
 
-`BSLogger`を選択したままの状態で`Add Package`ボタンを押下してライブラリをインストールします。
+To install library, keep choosing `BSLogger` and click `Add Package` button.
 
-![インストール画像4](./Docs/images/install_4.png)
+![Installation Image4](./Docs/images/install_4.png)
 
 
-### <a name="private-setting"></a>プライベートリポジトリの設定
-※社外公開する時に削除。
+### <a name="private-setting"></a>Settings of Private Repository
+※Before open source,this shoud be deleted
 
-プライベートリポジトリのライブラリをプロジェクトに導入する場合は、以下の設定を順に行なってください。
+There is the way of settings for adapting private repository's library into project at down below.
 
-#### 1. SSH/Configファイルの設定
-macOS上にある`~/.ssh/Config`ファイルに以下の情報を追記してください。また、IdentityFileのPathは自身がGitLabに登録したsshキーの秘密鍵のパスを記述してください。
+#### 1. SSH/Config File's Settings
+Postscript the information of down below at `~/.ssh/Config` file on macOS. In addtion to this, you need to write ssh Key's secretKey path which is registered by yourself at GitLab for IdentityFile's path.
 
 ```
 Host gitlab.com.workteam
@@ -70,48 +70,49 @@ Host gitlab.com.hobby
   PreferredAuthentications publickey
 ```
 
-#### 2. GitLabアクセストークンの発行
-[GitLab](https://gitlab.com/)にログインしてください。
+#### 2. Issue GitLab's Access Token
+Login [GitLab](https://gitlab.com/)
 
-次に、右上の自身のアイコンから`Edit profile`をクリックして、`UserSettings`ページへ遷移してください。
+Next, click yourown icon at upper right and click `Edit profile`, then move to `UserSettings` page.
 
-![GitLabアクセストークンの発行画像1](./Docs/images/private_setting_1.png)
-
----
-
-サイドメニューから`Access Tokens`をクリックして`Personal Access Tokens`ページへ遷移してください。
-
-![GitLabアクセストークンの発行画像2](./Docs/images/private_setting_2.png)
+![Issuing GitLab's Access Token1](./Docs/images/private_setting_1.png)
 
 ---
 
-トークンに適当な名前を付けたのち、権限一覧より`api`と`read_registry`にチェックを付け`Create personal access token`ボタンをクリックしてアクセストークンを発行してください。(期限は必要であれば付けてください)
+Click `Access Tokens` from side menu and move to `Personal Access Tokens` page
 
-![GitLabアクセストークンの発行画像3](./Docs/images/private_setting_3.png)
-
----
-
-トークンが発行されたら画面上に`Your new personal access token`という枠でトークンが表示されるので、クリップボードにコピーしておきましょう。(※トークンは一度しか表示されませんのでご注意ください)
-
-![GitLabアクセストークンの発行画像4](./Docs/images/private_setting_4.png)
-
-
-#### 3. XcodeでGitLabにログイン
-メニューバーの「Xcode」→「Preferences」をクリックしてXcodeの設定画面を表示します。
-
-![XcodeでGitLabにログイン1](./Docs/images/xcode_1.png)
+![Issuing GitLab's Access Token2](./Docs/images/private_setting_2.png)
 
 ---
 
-「Accounts」タブを開いて画面左下の「+」ボタンを押下して、`GitLab.com`を選択します。
+After name token, put a check `api` and `read_registry` from authorization lists, and click `Create personal access token` button to issue access token. (set Expiration date if necessary)
 
-![XcodeでGitLabにログイン2](./Docs/images/xcode_2.png)
+![Issuing GitLab's Access Token3](./Docs/images/private_setting_3.png)
 
-表示されたフォームにGitLabアカウント名と2で生成したGitLabのアクセストークンを設定して、プライベートリポジトリへのアクセスは完了となります。
-## 使い方
-### 初期化
-アプリ起動時処理に以下を追加してください。
-「DEBUG・STAGING・RELESE」などのSchemeはプロジェクトで設定したスキーム名で記述してください。
+---
+
+After issuing token, `Your new personal access token` frame is displaying, copy to clipboard(※Token is displaying only one time.)
+
+![Issuing GitLab's Access Token4](./Docs/images/private_setting_4.png)
+
+
+#### 3. Login to GitLab on Xcode
+Display Xcode setting screen by clicking 'Xcode' → 'Preferences' at menu bar.
+
+![Login to GitLab on Xcode1](./Docs/images/xcode_1.png)
+
+---
+
+Open 'Accounts' Tab and click '+' at lower left of screeen, then choose `GitLab.com`.
+
+![Login to GitLab on Xcode2](./Docs/images/xcode_2.png)
+
+Put account name of GitLab and GitLab access token which you got at 2 to the form showing on display then your process to access private repository is completed.
+## Usage
+### Initialization
+Add the information down below when the app is started doing start-up process.
+Schemes like 'DEBUG・STAGING・RELESE' should be written by Scheme name of being setted at project.
+
 ```swift
 class AppDelegate : UIResponder, UIApplicationDelegate {
     func application(_application: UIApplication, 
@@ -130,18 +131,18 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
 }
 ```
 
-### ログ出力
-ログレベルに応じてメソッドを切り替えて使用してください。
-#### ログ出力一覧
-|レベル|通常ログ出力|変数ログ出力|
+### Log Output
+Use this function by switching methods as log level.
+#### Log Output List
+|Level|General Log Output|Variable Log Output|
 |----|----|----|
 |debug|`BSLogger.debug(Any)`|`hoge.log(level: .debug)`|
 |info|`BSLogger.info(Any)`|`hoge.log(level: .info)`|
 |warn|`BSLogger.warn(Any)`|`hoge.log(level: .warn)`|
 |error|`BSLogger.error(Any)`|`hoge.log(level: .error)`|
 
-#### ログ出力サンプル
-通常のログ出力のサンプルです。
+#### Log Output sample
+Here is a sample of General log output.
 ```swift
 import BSLogger
 
@@ -152,7 +153,7 @@ actor MainViewModel: ObservableObject {
     }
 }
 ```
-出力結果 >
+Output result >
 ```console
 [DEBUG] MainViewModel.onTapButton() #5: Button was tapped.
 [DEBUG] MainViewModel.onTapButton() #6: Hello, world
@@ -161,7 +162,8 @@ actor MainViewModel: ObservableObject {
 
 ---
 
-変数を直接ログ出力する場合のサンプルです。
+Here is a sample of Directory doing log output.
+
 ```swift
 import BSLogger
 
@@ -173,13 +175,13 @@ actor MainViewModel: ObservableObject {
     }
 }
 ```
-出力結果 >
+Output result >
 ```console
 [WARN] MainViewModel.onTapButton() #7: Button was tapped.
 ```
 
-#### 変数ログ出力でサポートされている型一覧
-##### プリミティブ型
+#### List of supported data type for Variable Log Output
+##### Primitive data type
 - String
 - Int
 - Double
@@ -201,8 +203,8 @@ actor MainViewModel: ObservableObject {
 - CGAffineTransform
 - UIEdgeInsets
 
-### 実行速度計測
-処理の実行速度を計測したい時に簡単に使えるメソッドを用意しています。
+### Measure The Processing Speed
+We provite easy methods to use for the time when you want to measure the processing sepeed.
 
 ```swift
 import BSLogger
@@ -212,7 +214,7 @@ BSLogger.timeCheck(key: "Time") {
 }
 ```
 
-また最低OSにiOS13以上が指定されているプロジェクトでは`async/await`をサポートしたメソッドが利用可能です。
+In Additon to above, you can use `async/await` supported methods if the project specifies iOS 13 or later for lowest OS.
 ```swift
 import BSLogger
 
@@ -221,10 +223,10 @@ BSLogger.timeCheck(key: "AsyncTime", task: .main) {
 }
 ```
 
-### Deinitログ出力
+### Deinit Log OutPut
 太郎は終わったら松本さんに翻訳依頼をかける。
 
-## デモアプリ
-[デモアプリ](./Demo)
-## ライセンス
-※ 社外公開する時に記載。
+## Demo 
+[Demo](./Demo)
+## License
+※When open source, we add License information here.
