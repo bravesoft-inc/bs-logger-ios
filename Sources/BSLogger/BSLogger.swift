@@ -7,16 +7,16 @@ public struct BSLogger {
         case warn
         case error
     }
-    
+
     public enum Environment: String {
         case develop
         case staging
         case production
     }
-    
+
     public static var shared = BSLogger()
     public static var environment: Environment = .develop
-    
+
     public func startRun(environment: Environment) {
         BSLogger.environment = environment
     }
@@ -45,6 +45,10 @@ public struct BSLogger {
         }
     }
     
+    public static func `deinit`(className: String = #file) {
+        print("[DEINIT] \(getClassName(from: className)) deinit")
+    }
+
     public static func timeCheck(key: String = "", task: DispatchQueue = .global(), block: @escaping () -> Void) {
         task.async {
             let speedCheker = BSTimeCheker(key: key)
@@ -52,7 +56,7 @@ public struct BSLogger {
             speedCheker.finish()
         }
     }
-    
+
     @available(iOS 13.0, macOS 13.0, tvOS 13.0, watchOS 13.0, *)
     public static func timeCheck(key: String = "", block: @escaping () async -> Void) {
         Task {
@@ -64,7 +68,7 @@ public struct BSLogger {
 }
 
 extension BSLogger {
-    internal static func getClassName(from filePath: String) -> String {
+    static func getClassName(from filePath: String) -> String {
         guard let fileName = filePath.components(separatedBy: "/").last else {
             return ""
         }

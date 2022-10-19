@@ -221,7 +221,21 @@ BSLogger.timeCheck(key: "AsyncTime", task: .main) {
 ```
 
 ### Deinitログ出力
-太郎記載。
+オブジェクト破棄時のメソッドが準備されてます。
+
+```swift
+import BSLogger
+
+class Hoge {
+    deinit {
+        BSLogger.deinit()
+    }
+}
+```
+出力結果 >
+```console
+[DEINIT] Hoge deinit
+```
 
 ## デモアプリ
 [デモアプリ](./Demo)
