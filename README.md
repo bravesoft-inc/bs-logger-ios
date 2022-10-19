@@ -7,11 +7,12 @@
 [TOC]
 
 ## Overview
-This is a library which is provided by [bravesoft](https://www.bravesoft.co.jp/) to output log simply.
+This is a library that is provided by [bravesoft](https://www.bravesoft.co.jp/) to output logs simply.
 
 ## Installation
-This library is able to adapt into the project by using Swift Package Manager(SPM).
-However, this library is a private repository due to only share to bravesoft group companies. SO, after adapting by SPM, apply [this settings](#private-setting).
+This library can adapt to the project by using Swift Package Manager(SPM).
+However, this library is a private repository due to only sharing to bravesoft group companies. So, after adapting by SPM, apply [these settings](#private-setting).
+
 
 ### Swift Package Manager
 #### Requirements
@@ -19,13 +20,13 @@ However, this library is a private repository due to only share to bravesoft gro
 - Check [Package.swift](./Package.swift) for letting you know the supported versions and platforms.
 #### Install
 ##### Install From Xcode
-Choose the prpject that you want to adapt bs_logger and click `+` button at lower left of `Package Dependencies` tab.
+Choose the project that you want to adapt bs_logger and click the `+` button at the lower left of the `Package Dependencies` tab.
 
 ![Installtion Image1](./Docs/images/install_1.png)
 
 ---
 
-Put repository URL at search window of upper right and search `bs_logger`
+Put the repository URL at the search window of the upper right and search `bs_logger`
 ```console
 https://gitlab.com/bs-libraries/bs_logger
 ```
@@ -33,24 +34,24 @@ https://gitlab.com/bs-libraries/bs_logger
 
 ---
 
-Next Specify `Up to Next Manager Version` and `1.0.0` for lowest verion to `Dependecy Rule` and click `Add Package` button at lower right of dialog.
+Next, Specify `Up to Next Manager Version` and `1.0.0` for the lowest version to `Dependency Rule` and click the `Add Package` button at the lower right of the dialog.
 
 ![Installation Image3](./Docs/images/install_3.png)
 
 ---
 
-To install library, keep choosing `BSLogger` and click `Add Package` button.
+To install the library, keep choosing `BSLogger` and click the `Add Package` button.
 
 ![Installation Image4](./Docs/images/install_4.png)
 
 
 ### <a name="private-setting"></a>Settings of Private Repository
-※Before open source,this shoud be deleted
+※Before open source, this section will be deleted
 
-There is the way of settings for adapting private repository's library into project at down below.
+There is a way of settings for adapting the private repository's library into the project down below.
 
 #### 1. SSH/Config File's Settings
-Postscript the information of down below at `~/.ssh/Config` file on macOS. In addtion to this, you need to write ssh Key's secretKey path which is registered by yourself at GitLab for IdentityFile's path.
+Postscript the information of down below in `~/.ssh/Config` file on macOS. In addition to this, you need to write ssh Key's secretKey path which is registered by yourself at GitLab for IdentityFile's path.
 
 ```
 Host gitlab.com.workteam
@@ -73,45 +74,45 @@ Host gitlab.com.hobby
 #### 2. Issue GitLab's Access Token
 Login [GitLab](https://gitlab.com/)
 
-Next, click yourown icon at upper right and click `Edit profile`, then move to `UserSettings` page.
+Next, click your own icon at the upper right and click `Edit profile`, then move to the `UserSettings` page.
 
 ![Issuing GitLab's Access Token1](./Docs/images/private_setting_1.png)
 
 ---
 
-Click `Access Tokens` from side menu and move to `Personal Access Tokens` page
+Click `Access Tokens` from the side menu and move to `Personal Access Tokens` page
 
 ![Issuing GitLab's Access Token2](./Docs/images/private_setting_2.png)
 
 ---
 
-After name token, put a check `api` and `read_registry` from authorization lists, and click `Create personal access token` button to issue access token. (set Expiration date if necessary)
+After the name token, put check `api` and `read_registry` from the authorization lists and click `Create personal access token` button to issue the access token. (set Expiration date if necessary)
 
 ![Issuing GitLab's Access Token3](./Docs/images/private_setting_3.png)
 
 ---
 
-After issuing token, `Your new personal access token` frame is displaying, copy to clipboard(※Token is displaying only one time.)
+After issuing the token, `Your new personal access token` frame will be displayed and copy it to clipboard(※Token is displayed only one time.)
 
 ![Issuing GitLab's Access Token4](./Docs/images/private_setting_4.png)
 
 
 #### 3. Login to GitLab on Xcode
-Display Xcode setting screen by clicking 'Xcode' → 'Preferences' at menu bar.
+Display the Xcode setting screen by clicking 'Xcode' → 'Preferences' at the menu bar.
 
 ![Login to GitLab on Xcode1](./Docs/images/xcode_1.png)
 
 ---
 
-Open 'Accounts' Tab and click '+' at lower left of screeen, then choose `GitLab.com`.
+Open 'Accounts' Tab and click '+' at the lower left of the screen, then choose `GitLab.com`.
 
 ![Login to GitLab on Xcode2](./Docs/images/xcode_2.png)
 
-Put account name of GitLab and GitLab access token which you got at 2 to the form showing on display then your process to access private repository is completed.
+Put the account name of GitLab and GitLab access token which you got at 2 to the form showing on display then your process to access the private repository is completed.
 ## Usage
 ### Initialization
-Add the information down below when the app is started doing start-up process.
-Schemes like 'DEBUG・STAGING・RELESE' should be written by Scheme name of being setted at project.
+Add the information down below when the app is started doing the start-up process.
+Schemes like 'DEBUG・STAGING・RELESE' should be written by the Scheme name of being set at the project.
 
 ```swift
 class AppDelegate : UIResponder, UIApplicationDelegate {
@@ -204,7 +205,7 @@ Output result >
 - UIEdgeInsets
 
 ### Measure The Processing Speed
-We provite easy methods to use for the time when you want to measure the processing sepeed.
+We provide easy methods to use for the time when you want to measure the processing speed.
 
 ```swift
 import BSLogger
@@ -214,7 +215,7 @@ BSLogger.timeCheck(key: "Time") {
 }
 ```
 
-In Additon to above, you can use `async/await` supported methods if the project specifies iOS 13 or later for lowest OS.
+In addition to the above, you can use `async/await` supported methods if the project specifies iOS 13 or later for the lowest OS.
 ```swift
 import BSLogger
 
@@ -224,7 +225,7 @@ BSLogger.timeCheck(key: "AsyncTime", task: .main) {
 ```
 
 ### Deinit Log OutPut
-We provite methods for when destroying an object.
+We provide methods for when destroying an object.
 
 ```swift
 import BSLogger
@@ -243,4 +244,4 @@ Output result >
 ## Demo 
 [Demo](./Demo)
 ## License
-※When open source, we add License information here.
+※When opening the source, we add License information here.
