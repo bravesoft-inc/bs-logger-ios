@@ -1,6 +1,6 @@
 [日本語のREADMEはこちら](./README-ja.md)
 # BSLogger
-<img src="https://img.shields.io/badge/SPM-v0.1.0-blue.svg?logo=swift" />
+<img src="https://img.shields.io/badge/SPM-v1.0.0-blue.svg?logo=swift" />
 <img src="https://img.shields.io/badge/platform-iOS-lightgrey.svg" />
 <br><br>
 
