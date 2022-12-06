@@ -11,8 +11,6 @@ This is a library that is provided by [bravesoft](https://www.bravesoft.co.jp/) 
 
 ## Installation
 This library can adapt to the project by using Swift Package Manager(SPM).
-However, this library is a private repository due to only sharing to bravesoft group companies. So, after adapting by SPM, apply [these settings](#private-setting).
-
 
 ### Swift Package Manager
 #### Requirements
@@ -43,94 +41,6 @@ Next, Specify `Up to Next Manager Version` and `1.0.0` for the lowest version to
 To install the library, keep choosing `BSLogger` and click the `Add Package` button.
 
 ![Installation Image4](./Docs/images/install_4.png)
-
-
-### <a name="private-setting"></a>Settings of Private Repository
-※Before open source, this section will be deleted
-
-There is a way of settings for adapting the private repository's library into the project down below.
-
-#### 1. SSH/Config File's Settings
-Postscript the information of down below in `~/.ssh/Config` file on macOS. In addition to this, you need to write ssh Key's secretKey path which is registered by yourself at GitLab for IdentityFile's path.
-
-```
-Host gitlab.com.workteam
-  HostName gitlab.com
-  User git
-  IdentityFile  ~/.ssh/id_rsa
-  UseKeychain yes
-  AddKeysToAgent yes
-  PreferredAuthentications publickey
- 
-Host gitlab.com.hobby
-  HostName gitlab.com
-  User git
-  IdentityFile  ~/.ssh/id_rsa
-  UseKeychain yes
-  AddKeysToAgent yes
-  PreferredAuthentications publickey
-```
-
-#### 2. Issue GitLab's Access Token
-Login [GitLab](https://gitlab.com/)
-
-Next, click your own icon at the upper right and click `Edit profile`, then move to the `UserSettings` page.
-
-![Issuing GitLab's Access Token1](./Docs/images/private_setting_1.png)
-
----
-
-Click `Access Tokens` from the side menu and move to `Personal Access Tokens` page
-
-![Issuing GitLab's Access Token2](./Docs/images/private_setting_2.png)
-
----
-
-After the name token, put check `api` and `read_registry` from the authorization lists and click `Create personal access token` button to issue the access token. (set Expiration date if necessary)
-
-![Issuing GitLab's Access Token3](./Docs/images/private_setting_3.png)
-
----
-
-After issuing the token, `Your new personal access token` frame will be displayed and copy it to clipboard(※Token is displayed only one time.)
-
-![Issuing GitLab's Access Token4](./Docs/images/private_setting_4.png)
-
-
-#### 3. Login to GitLab on Xcode
-Display the Xcode setting screen by clicking 'Xcode' → 'Preferences' at the menu bar.
-
-![Login to GitLab on Xcode1](./Docs/images/xcode_1.png)
-
----
-
-Open 'Accounts' Tab and click '+' at the lower left of the screen, then choose `GitLab.com`.
-
-![Login to GitLab on Xcode2](./Docs/images/xcode_2.png)
-
-Put the account name of GitLab and GitLab access token which you got at 2 to the form showing on display then your process to access the private repository is completed.
-## Usage
-### Initialization
-Add the information down below when the app is started doing the start-up process.
-Schemes like 'DEBUG・STAGING・RELESE' should be written by the Scheme name of being set at the project.
-
-```swift
-class AppDelegate : UIResponder, UIApplicationDelegate {
-    func application(_application: UIApplication, 
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-        
-        #if DEBUG
-          BSLogger.shared.startRun(environment: .develop)
-        #elseif STAGING
-          BSLogger.shared.startRun(environment: .staging)
-        #else //RELEASE
-          BSLogger.shared.startRun(environment: .production)
-        #endif
-        
-        return true
-    }
-}
-```
 
 ### Log Output
 Use this function by switching methods as log level.
